@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="node_modules/vue/dist/vue.js"></script> -->
+        <script src="node_modules/@tensorflow/tfjs/dist/tf.min.js"></script>
+        <style>
+            .col-center{
+                margin:0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="text-center container">
+            <div style="border:2px solid #b1b1b1;padding:20px 0;">
+            <!--用于识别的图片-->
+                <p class="row-12">请选择用于识别的图片</p>
+                <div class="row text-center">
+                <canvas height="50" width="50" id="mycanvas" class="" style="margin:0 auto"></canvas>
+                </div>
+                <input type="file" name="pic" id="pic" class="btn btn-default" accept="image/gif, image/jpeg, image/png" onchange="readFile(this)" />
+                <button type="button" class="btn btn-danger" onclick="btnPredictClickHandler()">开始识别</button>
+            </div>
+            <div style="border:2px solid #b1b1b1;padding:20px 0;">
+                <!--用于测试的序号-->
+                <p class="row-12">请输入图片正确的序号</p>
+                <div class="row">
+                    <input type="number" id="correctNum" class="form-control col-sm-3  col-center" ">
+                </div>
+                <div class="row"><p></p></div>
+                <div class="row">
+                    <button type="button" class="btn btn-danger col-sm-2  col-center" onclick="btnTrainClickHandler()">开始训练</button>
+                </div>
+                <p class="train">训练情况:</p>
+            </div>
+            <div style="border:2px solid #b1b1b1;padding:20px 0;">
+                <!--用于输出结果-->
+                <p class="row-12">您这张图片对应的序号为</p>
+                <p class="row-12" id="result"></p>
+            </div>
+            <div id="matching" class="text-center" style="border:2px solid #b1b1b1;padding:20px 0;">
+                <!--用于输出结果-->
+                
+            </div>
+        </div>  
+        
+    </body>
+    <script src="app2.js"></script>
+</html>
