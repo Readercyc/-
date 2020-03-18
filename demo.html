@@ -23,7 +23,7 @@
                 <div class="row text-center">
                 <canvas height="50" width="50" id="mycanvas" class="" style="margin:0 auto"></canvas>
                 </div>
-                <input type="file" name="pic" id="pic" class="btn btn-default" accept="image/gif, image/jpeg, image/png" onchange="readFile(this)" />
+                <input type="file" name="pic" id="pic" class="btn btn-default" accept="image/gif, image/jpeg, image/png" multiple="multiple" onchange="readFile(this)" />
                 <button type="button" class="btn btn-danger" onclick="btnPredictClickHandler()">开始识别</button>
             </div>
             <div style="border:2px solid #b1b1b1;padding:20px 0;">
@@ -43,9 +43,13 @@
                 <p class="row-12">您这张图片对应的序号为</p>
                 <p class="row-12" id="result"></p>
             </div>
-            <div id="matching" class="text-center" style="border:2px solid #b1b1b1;padding:20px 0;">
+            <div id="matching"  style="border:2px solid #b1b1b1;padding:20px 0;">
                 <!--用于输出结果-->
                 
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="save()">一定要记得保存！</button>
+               
             </div>
         </div>  
         
